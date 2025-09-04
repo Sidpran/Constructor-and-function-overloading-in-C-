@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+class fetch {
+public:
+    int a, b;
+
+    fetch() : a(10), b(20) {}
+    fetch(int m, int n) : a(m), b(n) {}
+    fetch(const fetch& t) : a(t.a), b(t.b) {}
+
+    void display() const {
+        cout << "a: " << a << " ";
+        cout << "b: " << b << "\n";
+    }
+};
+
+int main() {
+    fetch f1;
+    fetch f2(3, 4);
+    fetch f3(f1);
+
+    f1.display();
+    f2.display();
+    f3.display();
+    return 0;
+}
